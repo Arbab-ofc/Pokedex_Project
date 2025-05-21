@@ -30,7 +30,9 @@ function PokemonList() {
                 {
                     name : pokemon.name ,
                     image : (pokemon.sprites.other) ? pokemon.sprites.other.dream_world.front_default : pokemon.sprites.front_shiny ,
-                    types : pokemon.types
+                    types : pokemon.types ,
+                    id : pokemon.id
+
                 }
             )
         });
@@ -48,7 +50,7 @@ function PokemonList() {
             <br/>
             <div className="pokemon-wrapper">
                 {(isLoading) ? 'Loading.....' : 
-                     pokemonList.map((p)=> <Pokemon name={p.name} image={p.image} key={p.id} />)
+                     pokemonList.map((p)=> <Pokemon name={p.name} image={p.image} key={p.id} id={p.id} />)
                 }
             </div>
             <div className="controls">
